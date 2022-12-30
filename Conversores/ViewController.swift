@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lb_resultado: UILabel!
     @IBOutlet weak var lb_unidade_medida: UILabel!
+    @IBOutlet weak var lb_title: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btn_next(_ sender: UIButton) {
+        switch lb_title.text! {
+        case "Temperatura":
+            lb_title.text = "Peso"
+        default:
+            lb_title.text = "Teste"
+        }
     }
     
     @IBAction func btn_converter(_ sender: UIButton) {
