@@ -96,11 +96,11 @@
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="btn_celsius" destination="Yuw-6h-fYO" id="Jsf-AF-nId"/>
-                        <outlet property="btn_farenheint" destination="Fw5-fe-rWu" id="D04-02-0k2"/>
+                        <outlet property="btn_acao_01" destination="Yuw-6h-fYO" id="qII-w1-vM5"/>
+                        <outlet property="btn_acao_02" destination="Fw5-fe-rWu" id="vCv-Ul-auz"/>
                         <outlet property="lb_resultado" destination="uCT-kg-xq4" id="ftO-Ht-mlf"/>
+                        <outlet property="lb_sub_resultado" destination="m9U-ig-TYQ" id="c3b-vB-L6V"/>
                         <outlet property="lb_title" destination="MMp-31-zDG" id="mmB-er-rUA"/>
-                        <outlet property="lb_unidade_medida" destination="m9U-ig-TYQ" id="c3b-vB-L6V"/>
                         <outlet property="tf_nr_valor" destination="w4X-1Y-toc" id="F8R-bI-c8L"/>
                     </connections>
                 </viewController>
