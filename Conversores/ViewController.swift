@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     @IBAction func btn_next(_ sender: UIButton) {
         switch lb_title.text! {
@@ -67,30 +71,63 @@ class ViewController: UIViewController {
             default:
                 calcDistance()
         }
+        
+        view.endEditing(true)
+        
+        let result = Double(lb_resultado.text!)!
+        lb_resultado.text = String(format: "%.2f", result)
     }
     
     func calcTemperature(){
-        guard let temperature = Double(tf_nr_valor!) else {return}
+        guard let temperature = Double(tf_nr_valor.text!) else {return}
         
         if btn_acao_01.alpha == 1.0{
             lb_sub_resultado.text = "Farenheint"
-            lb_resultado.text = String()
+            lb_resultado.text = String(temperature * 1.8 + 32.0)
             
         } else {
             lb_sub_resultado.text = "Celsius"
+            lb_resultado.text = String((temperature - 32.0) / 1.8)
         }
     }
     
     func calcWeight(){
+        guard let weight = Double(tf_nr_valor.text!) else {return}
         
+        if btn_acao_01.alpha == 1.0{
+            lb_sub_resultado.text = "Libra"
+            lb_resultado.text = String(weight / 2.2046)
+            
+        } else {
+            lb_sub_resultado.text = "Kilograma"
+            lb_resultado.text = String(weight * 2.2046)
+        }
     }
     
     func calcCurrency(){
+        guard let currency = Double(tf_nr_valor.text!) else {return}
         
+        if btn_acao_01.alpha == 1.0{
+            lb_sub_resultado.text = "Dólar"
+            lb_resultado.text = String(currency / 3.5)
+            
+        } else {
+            lb_sub_resultado.text = "Real"
+            lb_resultado.text = String(currency * 3.5)
+        }
     }
     
     func calcDistance(){
+        guard let distance = Double(tf_nr_valor.text!) else {return}
         
+        if btn_acao_01.alpha == 1.0{
+            lb_sub_resultado.text = "Metros"
+            lb_resultado.text = String(distance / 1000.0)
+            
+        } else {
+            lb_sub_resultado.text = "Km"
+            lb_resultado.text = String(distance * 1000.0)
+        }
     }
 }
 
